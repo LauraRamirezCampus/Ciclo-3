@@ -26,21 +26,23 @@
 
 
 /*******  CON TARGET *******/
-const CONTAINER = document.querySelector(".container");
-
+const container = document.querySelector(".container");
 let iContador = 0;
-const TXTCONTADOR = document.
+const txtcontador = document.
 getElementById("idcontador");
 
 
-CONTAINER.addEventListener('click', (e) => {
-     console.log(e)
-    if (e.target.classList.contains("btn-light"))
-        TXTCONTADOR.textContent = ++iContador;
-    else if (e.target.classList.contains("btn-dark"))
-        TXTCONTADOR.textContent = --iContador;
-        
-        e.stopPropagation();
+container.addEventListener('click', (e) => {
+    if (e.target.classList.contains("btn-light")) {
+        txtcontador.textContent = ++iContador;
+    }
+    else if (e.target.classList.contains("btn-dark")) {
+        txtcontador.textContent = --iContador;
+    }
+
+    e.stopPropagation();
 });
 
-
+document.body.addEventListener('click', e => {
+    console.log('Se hizo click en el body');
+});

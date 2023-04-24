@@ -1,56 +1,59 @@
-// const cuentaCorrienteA = {
-//     numero : 1234,
-//     nombre:"Juan",
-//     saldo: 350_000,
-//     depositar(monto) {
-//         this.saldo += monto
-//         return true;
-//     },
-//     girar(monto) {
-//         if (this.saldo >= monto)
-//             this.saldo -= monto;
-//         else
-//             return false;
+const cuentaCorrienteA = {
+    numero : 1234,
+    nombre:"Juan",
+    saldo: 350_000,
+    depositar(monto) {
+        this.saldo += monto
+        return true;
+    },
+    girar(monto) {
+        if (this.saldo >= monto)
+            this.saldo -= monto;
+        else
+            return false;
 
-//         return true;
-//     },
-//     consultarSaldo() {
-//         return this.saldo;
-//     }
-// }
-// const cuentaCorrienteB = {
-//     numero : 9876,
-//     nombre:"Maria",
-//     saldo: 450_600,
-//     depositar(monto) {
-//         this.saldo += monto
-//         return true;
-//     },
-//     girar(monto) {
-//         if (this.saldo >= monto)
-//             this.saldo -= monto;
-//         else
-//             return false;
+        return true;
+    },
+    consultarSaldo() {
+        return this.saldo;
+    }
+}
+const cuentaCorrienteB = {
+    numero : 9876,
+    nombre:"Maria",
+    saldo: 450_600,
+    depositar(monto) {
+        this.saldo += monto
+        return true;
+    },
+    girar(monto) {
+        if (this.saldo >= monto)
+            this.saldo -= monto;
+        else
+            return false;
 
-//         return true;
-//     },
-//     consultarSaldo() {
-//         return this.saldo;
-//     }
-// }
-// console.log(cuentaCorrienteA.consultarSaldo());
-// cuentaCorrienteA.depositar(350_000);
-// cuentaCorrienteA.girar(200_000);
-// console.log(cuentaCorrienteA.consultarSaldo());
-// console.log(cuentaCorrienteB.consultarSaldo());
-// cuentaCorrienteB.depositar(3_050_000);
-// cuentaCorrienteB.girar(0);
-// console.log(`el saldo de Maria es ${cuentaCorrienteB.consultarSaldo()}`);
+        return true;
+    },
+    consultarSaldo() {
+        return this.saldo;
+    }
+}
+console.log(cuentaCorrienteA.consultarSaldo());
+cuentaCorrienteA.depositar(350_000);
+cuentaCorrienteA.girar(200_000);
+console.log(cuentaCorrienteA.consultarSaldo());
+console.log(cuentaCorrienteB.consultarSaldo());
+cuentaCorrienteB.depositar(3_050_000);
+cuentaCorrienteB.girar(0);
+console.log(`el saldo de Maria es ${cuentaCorrienteB.consultarSaldo()}`);
+
+
+
 
 
 /* LO MISMO DE ARRIBA PERO CON CLASES */
 
- class cuentaCorriente {
+class cuentaCorriente {
     constructor(numero, nombre, saldo) {
         this.numero = numero;
         this.nombre = nombre;
