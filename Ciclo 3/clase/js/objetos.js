@@ -57,7 +57,7 @@ class cuentaCorriente {
     constructor(numero, nombre, saldo) {
         this._numero = numero;
         this._nombre = nombre;
-        this._saldo = saldo; 
+        this._saldo = saldo;
     }
     /* SETTER / GETTER */
     set numero(nuevoNumero) {
@@ -126,20 +126,20 @@ class numeroEntero {
         if (this.numero % 2 == 0) {
             console.log('El numero es PAR');
         }
-        else 
-        console.log('El numero es IMPAR');        
+        else
+            console.log('El numero es IMPAR');
     }
     posNeg() {
         if (this.numero > 0)
             console.log('El numero es POSITIVO');
         else if (this.numero < 0)
             console.log('El numero es NEGATIVO')
-        else 
+        else
             console.log('El numero es CERO')
-    }   
+    }
     primo() {
         for (let i = 2; i < this.numero; i++) {
-            if (this.numero % i === 0){
+            if (this.numero % i === 0) {
                 return console.log('el numero no es PRIMO');
             } else {
                 return console.log('El numero es PRIMO');
@@ -159,7 +159,7 @@ class producto {
         this.__codigo = codigo;
         this.__precio = precio;
         this.__cantidadBodega = cantidadB;
-        this.__cantidadMinima = cantidadM; 
+        this.__cantidadMinima = cantidadM;
     }
     get codigo() {
         return this.__codigo;
@@ -182,42 +182,40 @@ class producto {
     get cantidadM() {
         this.__cantidadMinima
     }
-
-
-    solPedido(cantidadM) {
-        if (cantidadM < 5) 
-            alert("Tiene que solicitar mas al proveedro");
-        else
-            return false;
-        
-        return true;
+    solPedido() {
+        if (this.__cantidadBodega < this.__cantidadMinima)
+        // Pendiente la solucion del error en solPedido
+            tarjeta++
     }
+    menorProducto
 }
+const bodega = [];
 let tarjeta = "";
-let bodega = [];
 
 function agregar() {
-    bodega = [];
     codigo = document.querySelector(".codigo").value;
     precio = document.querySelector(".precio").value;
     cantidadB = document.querySelector(".cantidadB").value;
     cantidadM = document.querySelector(".cantidadM").value;
-    bodega.push([codigo, precio, cantidadB, cantidadM])
-    bodega = new producto(codigo, precio, cantidadB, cantidadM)
-    if (cantidadB < cantidadM) 
-         tarjeta += /* HTML */ ` 
-    <div class="col-6">
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title">Special title treatment</h5>
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            </div>
-        </div>
-    </div>
-      `
+    const datosProducto = new producto(codigo, precio, cantidadB, cantidadM)
+    bodega.push([datosProducto]);
     
+    console.log(datosProducto);
+    console.log(bodega);
+
+    if (producto.solPedido())
+
+    tarjeta += /* HTML */ ` 
+    <div class="card text-bg-danger mb-3 mt-3 col-3 ms-5" >
+      <div class="card-header">ALERTA!!!</div>
+      <div class="card-body">
+        <h5 class="card-title">El producto con el codigo ${codigo} tiene poco stock!!</h5>
+        <p class="card-text">Solicitele mas de ese producto a su respectivo proveedor.</p>
+      </div>
+    </div>
+          `;
     document.querySelector("#tarjeta").innerHTML = tarjeta;
 }
-window.addEventListener("load", function() {
+window.addEventListener("load", function () {
     document.getElementById("agregar").addEventListener("click", agregar);
 });
