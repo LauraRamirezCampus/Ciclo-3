@@ -1,16 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../css/bootstrap.css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="../css/bootstrap.css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/objetos.css">
     <script src="../js/bootstrap.js/bootstrap.min.js" defer></script>
     <script src="../js/objetos.js" defer></script>
 </head>
+
 <body>
-    
+    <div class="container">
+        <div class="row">
+            <div class="col-12 mt-3 text-center">
+                <h1>Calcular Productos</h1>
+            </div>
+        </div>
+        <form action="">
+            <div class="row ">
+                <div class="col-6  mt-3 miFormulario">
+                    <div class="form-floating">
+                        <input type="number" class="form-control mt-5 codigo" id="floatingInput" placeholder="Codigo">
+                        <label for="floatingInput">Codigo</label>
+                    </div>
+                    <div class="form-floating">
+                        <input type="number" class="form-control mt-3 precio" id="floatingInput" placeholder="Precio">
+                        <label for="floatingInput">Precio</label>
+                    </div>
+                    <div class="form-floating mt-3">
+                        <input type="number" class="form-control cantidadB" id="floatingInput"
+                            placeholder="Cantidad En Bodega">
+                        <label for="floatingInput">Cantidad En Bodega</label>
+                    </div>
+                    <div class="form-floating mt-3">
+                        <input type="number" class="form-control cantidadM" id="floatingInput"
+                            placeholder="Cantidad Minima">
+                        <label for="floatingInput">Cantidad Minima</label>
+                    </div>
+
+                    <button type="button" id="agregar" class="btn btn-dark mt-5">Cargar</button>
+
+                </div>
+            </div>
+        </form>
+        <div class="row" id="tarjeta">
+
+            
+
+        </div>
+    </div>
+
+    </div>
+
 </body>
+
 </html>
