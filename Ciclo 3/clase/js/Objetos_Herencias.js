@@ -5,36 +5,65 @@ class MiMath {
 }
 
 console.log(MiMath.cuadrado(5))
+
+
 class Persona {
 
+    static cantPersona = 0;
+    constructor(tipoPersona, tipoDNI, numIdentificacion, nombre, telefono, cuenta) {
+        this.__tPersona = tipoPersona;
+        this.__tDni = tipoDNI;
+        this.__nIden = numIdentificacion;
+        this._nombre = nombre;
+        this.__telefono = telefono;
+        this.__cuenta = cuenta;
+        ++Persona.cantPersona;
+    }
+
+    set tipoPersona(nuevaPersona) {
+        this.__tPersona = nuevaPersona;
+    }
+    get tipoPersona() {
+        return this.__tPersona
+    }
+    set tipoDNI(nuevoDNI) {
+        this.__tDni = nuevoDNI;
+    }
+    get tipoDNI() {
+        return this.__tDni
+    }
+    set numIdentificacion(nuevaIdent) {
+        this.__nIden = nuevaIdent;
+    }
+    get numIdentificacion() {
+        return this.__nIden
+    }
+    set nombre(nuevoNombre) {
+        this._nombre = nuevoNombre;
+    }
+    get nombre() {
+        return this._nombre;
+    }
+
 }
+
+
 class Cuenta {
         /* ESTATICOS */
 
     static cantidad = 0;
 
-    constructor(numero, nombre, saldo = 0, Persona) {
+    constructor(numero, saldo = 0,) {
         this._numero = numero;
-        this._nombre = nombre;
         this._saldo = saldo;
-        this.__persona = Persona
         ++Cuenta.cantidad;
     }
     /* SETTER / GETTER */
-    set numero(nuevoNumero) {
-        this._numero = nuevoNumero;
-    }
+
     get numero() {
         return this._numero;
     }
-    set nombre(nuevoNombre) {
-        console.log("SET nombre");
-        this._nombre = nuevoNombre;
-    }
-    get nombre() {
-        console.log("GET nombre");
-        return this._nombre;
-    }
+
     set saldo(nuevoSaldo) {
         this._saldo = nuevoSaldo;
     }
@@ -103,11 +132,4 @@ class CuentaCorriente extends Cuenta {
     }
 }
 
-let ctaC = new CuentaCorriente(654, "Daniela", 2_000_000, 2_000_000);
-ctaC.girar(2_500_000);
-ctaC.depositar(500_000);
-ctaC.girar(7_000_000);
-console.log("Saldo: ", ctaC.consultarSaldo());
 
-console.log(Cuenta.cantidad);
-console.log(CuentaCorriente.cantidad);
