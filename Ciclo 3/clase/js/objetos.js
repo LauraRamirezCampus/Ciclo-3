@@ -53,11 +53,17 @@
 // 
 /* LO MISMO DE ARRIBA PERO CON CLASES */
 
-class cuentaCorriente {
+class CuentaCorriente {
+
+    /* ESTATICOS */
+
+    static cantidad = 0;
     constructor(numero, nombre, saldo) {
         this._numero = numero;
         this._nombre = nombre;
         this._saldo = saldo;
+    
+        ++CuentaCorriente.cantidad;
     }
     /* SETTER / GETTER */
     set numero(nuevoNumero) {
@@ -97,25 +103,38 @@ class cuentaCorriente {
     consultarSaldo() {
         return this.saldo;
     }
+
+    static nombreBanco() {
+        return "Campus Bank"
+    }
 }
-// const ctaCorrA = new cuentaCorriente(1234, "Juan", 350000);
-// ctaCorrA.depositar(100_000);
-// console.log(ctaCorrA.consultarSaldo());
-// 
-// ctaCorrA.nombre = "Oscar";
-// console.log("Nombre: ", ctaCorrA.nombre);
-// 
-// 
-// console.log(ctaCorrA.nombre);
-// const ctaCorrB = new cuentaCorriente(9876, "Maria", 450600);
-// console.log(ctaCorrA.consultarSaldo());
-// ctaCorrA.girar(200_000);
-// console.log(ctaCorrA.consultarSaldo());
-// console.log("/".repeat(30));
-// console.log(ctaCorrB.consultarSaldo());
-// ctaCorrB.depositar(3_050_000);
-// ctaCorrB.girar(0);
-// console.log(`el saldo de Maria es ${ctaCorrB.consultarSaldo()}`); 
+const ctaCorrA = new CuentaCorriente(1234, "Juan", 350000);
+const ctaCorrB = new CuentaCorriente(9876, "Maria", 450600);
+console.log(ctaCorrA.cantidad);
+console.log(CuentaCorriente.nombreBanco());
+
+CuentaCorriente.
+
+console.log("/".repeat(30));
+
+/////////////////////////////////////////////////////////////////////
+
+ctaCorrA.depositar(100_000);
+console.log(ctaCorrA.consultarSaldo());
+
+ctaCorrA.nombre = "Oscar";
+console.log("Nombre: ", ctaCorrA.nombre);
+
+
+console.log(ctaCorrA.nombre);
+console.log(ctaCorrA.consultarSaldo());
+ctaCorrA.girar(200_000);
+console.log(ctaCorrA.consultarSaldo());
+console.log("/".repeat(30));
+console.log(ctaCorrB.consultarSaldo());
+ctaCorrB.depositar(3_050_000);
+ctaCorrB.girar(0);
+console.log(`el saldo de Maria es ${ctaCorrB.consultarSaldo()}`); 
 
 
 class numeroEntero {
@@ -154,68 +173,72 @@ class numeroEntero {
 // console.log(numero1.primo());
 
 
-class producto {
-    constructor(codigo, precio, cantidadB, cantidadM) {
-        this.__codigo = codigo;
-        this.__precio = precio;
-        this.__cantidadBodega = cantidadB;
-        this.__cantidadMinima = cantidadM;
-    }
-    get codigo() {
-        return this.__codigo;
-    }
-    set precio(nuevoPrecio) {
-        this.__precio = nuevoPrecio;
-    }
-    get precio() {
-        return this.__precio;
-    }
-    set cantidadB(nuevoCantidadB) {
-        this.__cantidadBodega = nuevoCantidadB;
-    }
-    get cantidadB() {
-        return this.__cantidadBodega;
-    }
-    set cantidadM(nuevoCantidadM) {
-        this.__cantidadMinima = nuevoCantidadM;
-    }
-    get cantidadM() {
-        this.__cantidadMinima
-    }
-    solPedido() {
-        if (this.__cantidadBodega < this.__cantidadMinima)
-        // Pendiente la solucion del error en solPedido
-            tarjeta++
-    }
-    menorProducto
-}
-const bodega = [];
-let tarjeta = "";
+// class Producto {
+//     constructor(codigo, precio, cantidadB, cantidadM) {
+//         this.__codigo = codigo;
+//         this.__precio = precio;
+//         this.__cantidadBodega = cantidadB;
+//         this.__cantidadMinima = cantidadM;
+//     }
+//     get codigo() {
+//         return this.__codigo;
+//     }
+//     set precio(nuevoPrecio) {
+//         this.__precio = nuevoPrecio;
+//     }
+//     get precio() {
+//         return this.__precio;
+//     }
+//     set cantidadB(nuevoCantidadB) {
+//         this.__cantidadBodega = nuevoCantidadB;
+//     }
+//     get cantidadB() {
+//         return this.__cantidadBodega;
+//     }
+//     set cantidadM(nuevoCantidadM) {
+//         this.__cantidadMinima = nuevoCantidadM;
+//     }
+//     get cantidadM() {
+//         this.__cantidadMinima
+//     }
+//     solPedido() {
+//         if (this.__cantidadBodega < this.__cantidadMinima)
+//         // Pendiente la solucion del error en solPedidO
+//             alert("Necesita mas productos");
+//         else
+//             return false
+//         return true
+//     }
+//     menorProducto
+// }
+// const bodega = [];
+// let tarjeta = "";
 
-function agregar() {
-    codigo = document.querySelector(".codigo").value;
-    precio = document.querySelector(".precio").value;
-    cantidadB = document.querySelector(".cantidadB").value;
-    cantidadM = document.querySelector(".cantidadM").value;
-    const datosProducto = new producto(codigo, precio, cantidadB, cantidadM)
-    bodega.push([datosProducto]);
+// function agregar() {
+//     codigo = document.querySelector(".codigo").value;
+//     precio = document.querySelector(".precio").value;
+//     cantidadB = document.querySelector(".cantidadB").value;
+//     cantidadM = document.querySelector(".cantidadM").value;
+//     const datosProducto = new Producto(codigo, precio, cantidadB, cantidadM)
+//     bodega.push([datosProducto]);
     
-    console.log(datosProducto);
-    console.log(bodega);
+//     console.log(datosProducto);
+//     console.log(bodega);
 
-    if (producto.solPedido())
+//     if (Producto.solPedido()){ 
 
-    tarjeta += /* HTML */ ` 
-    <div class="card text-bg-danger mb-3 mt-3 col-3 ms-5" >
-      <div class="card-header">ALERTA!!!</div>
-      <div class="card-body">
-        <h5 class="card-title">El producto con el codigo ${codigo} tiene poco stock!!</h5>
-        <p class="card-text">Solicitele mas de ese producto a su respectivo proveedor.</p>
-      </div>
-    </div>
-          `;
-    document.querySelector("#tarjeta").innerHTML = tarjeta;
-}
-window.addEventListener("load", function () {
-    document.getElementById("agregar").addEventListener("click", agregar);
-});
+//         tarjeta += /* HTML */ ` 
+//         <div class="card text-bg-danger mb-3 mt-3 col-3 ms-5" >
+//             <div class="card-header">ALERTA!!!</div>
+//             <div class="card-body">
+//             <h5 class="card-title">El producto con el codigo ${codigo} tiene poco stock!!</h5>
+//             <p class="card-text">Solicitele mas de ese producto a su respectivo proveedor.</p>
+//             </div>
+//         </div>                `;
+//     }
+//     document.querySelector("#tarjeta").innerHTML = tarjeta;
+// }
+// window.addEventListener("load", function () {
+//     document.getElementById("agregar").addEventListener("click", agregar);
+// });
+
