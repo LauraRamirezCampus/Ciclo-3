@@ -163,13 +163,16 @@ class CuentaCorriente {
         }
 
     }
-} */ 
+} */
 
 // const numero1 = new numeroEntero(5);
 // console.log(numero1.parImpar());
 // console.log(numero1.posNeg());
 // console.log(numero1.primo());
 
+
+
+/* Clase nueva */
 class Producto {
     constructor(codigo, precio, cantidadB, cantidadM) {
         this.__codigo = codigo;
@@ -235,4 +238,6 @@ function agregar() {
 window.addEventListener("load", function () {
     document.getElementById("agregar").addEventListener("click", agregar);
 });
+
+
 
