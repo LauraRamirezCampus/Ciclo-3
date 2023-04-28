@@ -215,7 +215,6 @@ class Cuadrado extends Figura {
         return 4 * this.#lado
     }
 }
-
 class Rectangulo extends Figura {
     #base;
     #altura;
@@ -236,8 +235,6 @@ class Rectangulo extends Figura {
     get altura() {
         return this.#altura;
     }
-
-
     calcularArea() {
         return this.#base * this.#altura;
     }
@@ -245,7 +242,6 @@ class Rectangulo extends Figura {
         return 2 * (this.#base + this.#altura);
     }
 }
-
 class Circulo extends Figura {
     #radio;
     constructor(color, radio) {
@@ -258,7 +254,6 @@ class Circulo extends Figura {
     get radio() {
         return this.#radio
     }
-
     calcularArea() {
         return Math.PI * this.#radio ** 2;
     }
@@ -266,8 +261,6 @@ class Circulo extends Figura {
         return 2* Math.PI * this.#radio;
     }
 }
-
-
 class Canva {
     #background;
     #alto;
@@ -282,7 +275,6 @@ class Canva {
     get figuras() {
         return this.#figuras
     }
-
     agregarFiguras(figura) {
         this.#figuras.push(figura);
     }
@@ -291,17 +283,46 @@ class Canva {
 
 let c1 = new Canva();
 console.log("Figuras: ", c1.figuras);
-
 let cuad1 = new Cuadrado("Yellow", 3);
-
 c1.agregarFiguras(cuad1);
 console.log("Figuras: ", c1.figuras);
 console.log("Area del cuadrado: ", c1.figuras[0].calcularArea());
-
 let circ1 = new Circulo("Blue", 10);
 c1.agregarFiguras(circ1);
-
 for (let fig of c1.figuras) {
     console.log("Area de ", fig, "es ", fig.calcularArea());
 }
+console.log("-".repeat(30))
 
+
+/*           !!!CLASE NUEVA!!!   */
+
+
+//   ABSTRACTAS
+class CalseAbstracta {
+    constructor() {
+        if (new.target === CalseAbstracta){
+            throw new Error("No se puede crear una instancia de esta clase.");
+        }
+    }
+    metodoNormal() {
+        console.log('Ejecucion del metodo normal.');
+    }
+    metodoAbstracto() {
+        throw new Error('El metodo no ha sido implementado.')
+    }
+}
+class HijaAbstracta extends CalseAbstracta {
+    metodoAbstracto() {
+        console.log('Ejecucion del metodo abstracto');
+    }
+}
+
+// let obt1 = new CalseAbstracta();
+let hija1 = new HijaAbstracta();
+hija1.metodoNormal();
+hija1.metodoAbstracto();
+
+
+
+//  INTERFACES
