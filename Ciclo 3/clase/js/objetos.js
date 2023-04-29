@@ -235,6 +235,7 @@ function agregar() {
 
     document.querySelector("#tarjeta").innerHTML = tarjeta;
 }
+
 window.addEventListener("load", function () {
     document.getElementById("agregar").addEventListener("click", agregar);
 });

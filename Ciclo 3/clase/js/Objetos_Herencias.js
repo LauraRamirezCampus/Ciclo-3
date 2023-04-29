@@ -197,7 +197,7 @@ class Figura {
 
 class Cuadrado extends Figura {
     #lado;
-    constructor(color, lado) {
+    constructor(color, lado,) {
         super(color);
         this.#lado = lado
     }
