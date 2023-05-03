@@ -7,5 +7,8 @@ window.addEventListener('keydown', function (e) {
     if(!AUDIO) return; // Impide que la funcion actue en todas las teclas, solo en las que tienen su correspondiente data-key
     AUDIO.currentTime = 0; // tiempo de reaccion.
     AUDIO.play();
-    console.log(KEY);
+    KEY.classList.add('playing');
 });
+
+const KEYS = document.querySelectorAll('.key');
+KEYS.forEach(key => key.addEventListener('transitionend', removeTransition))
