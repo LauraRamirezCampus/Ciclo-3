@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/bootstrap.css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/LocalStorage.css">
+    <script src="../js/bootstrap.js/bootstrap.min.js" defer></script>
+    <script src="../js/LocalStorage.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-12 mt-3">
+                <h1>Ejemplo - LocalStorage</h1>
+            </div>
+        </div>
+
+        <form action="">
+            <div class="row ">
+                <div class="col-6  mt-3 miFormulario">
+                    <div class="form-floating">
+                        <input type="text" class="form-control mt-5 nombre" id="floatingInput" placeholder="Nombre">
+                        <label for="floatingInput">Nombre</label>
+                    </div>
+                    <div class="form-floating">
+                        <input type="text" class="form-control mt-3 apellido" id="floatingInput" placeholder="Apellido">
+                        <label for="floatingInput">Apellido</label>
+                    </div>
+
+
+                    <button type="button" id="Guardar" class="btn btn-dark mt-5">Guardar</button>
+
+
+                    <hr>
+                    <p>Nombre almacenado: </p>
+                    <textarea name="" id="agregarNombre" cols="20" rows="1"></textarea>
+                    <p>Apellido almacenado: </p>
+
+                    <textarea name="" id="agregarApellido" cols="20" rows="1"></textarea>
+
+                    <button type="button" id="cargar" class="btn btn-dark mt-5 d-flex">Cargar elementos</button>
+
+                </div>
+            </div>
+        </form>
+
+
+
+</body>
+</html>
